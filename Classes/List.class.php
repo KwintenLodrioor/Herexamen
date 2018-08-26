@@ -42,6 +42,7 @@ Class Lists
         $statement->bindValue(':userid', $_SESSION['userid']);
         $res = $statement->execute();
         $res = $statement->fetchAll();
+        return $res;
     }
 }
 ?>

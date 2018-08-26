@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Gegenereerd op: 26 aug 2018 om 14:30
+-- Gegenereerd op: 26 aug 2018 om 20:22
 -- Serverversie: 10.1.34-MariaDB
 -- PHP-versie: 7.2.8
 
@@ -39,35 +39,37 @@ CREATE TABLE `lists` (
 --
 
 INSERT INTO `lists` (`id`, `naam`, `userid`) VALUES
-(2, 'test', 0),
-(3, 'test met user', 3),
-(4, 'test met user', 3),
-(5, 'test met user', 3),
-(6, 'test met user', 3),
-(7, 'test met user', 3),
-(8, 'test met user', 3),
-(10, 'dfqfd', 3),
-(11, 'dfqfd', 3),
-(12, 'blabla', 3),
-(13, 'blabla', 3),
-(14, 'testje', 3),
-(15, 'testje', 3),
-(16, 'hallo', 3),
-(17, 'fkdjk', 3),
-(18, 'dfqdq', 3),
-(19, 'dfqdq', 3),
-(20, 'testje', 3),
-(21, 'testje', 3),
-(22, 'nog is', 3),
-(23, 'nog is', 3),
-(24, 'nog is', 3),
-(25, 'hallo', 3),
-(26, 'hallo', 3),
-(27, 'hfdkdl', 3),
-(28, 'new list', 3),
-(29, 'kfjqkdf', 3),
-(30, 'kfjqkdf', 3),
-(31, 'jkjljkj', 3);
+(65, 'testje', 3),
+(66, 'dufd', 3),
+(67, 'nieuw', 3),
+(68, 'fdq', 3),
+(69, 'aleeeee', 3),
+(70, 'aleeeee', 3),
+(71, 'nog is', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `Tasks`
+--
+
+CREATE TABLE `Tasks` (
+  `id` int(11) NOT NULL,
+  `list` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hours` int(255) NOT NULL,
+  `deadline` date NOT NULL,
+  `userid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `Tasks`
+--
+
+INSERT INTO `Tasks` (`id`, `list`, `title`, `hours`, `deadline`, `userid`) VALUES
+(1, 'testje', 'fdqffd', 0, '0000-00-00', 3),
+(2, 'nieuw', 'Taak PHP', 5, '2018-09-01', 3),
+(3, 'testje', 'Eindproject', 500, '2019-01-01', 3);
 
 -- --------------------------------------------------------
 
@@ -103,6 +105,12 @@ ALTER TABLE `lists`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexen voor tabel `Tasks`
+--
+ALTER TABLE `Tasks`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexen voor tabel `users`
 --
 ALTER TABLE `users`
@@ -116,7 +124,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT voor een tabel `lists`
 --
 ALTER TABLE `lists`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+
+--
+-- AUTO_INCREMENT voor een tabel `Tasks`
+--
+ALTER TABLE `Tasks`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT voor een tabel `users`
