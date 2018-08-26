@@ -1,5 +1,29 @@
 <?php
 session_start();
+
+include_once("Classes/User.class.php");
+include_once ("Classes/List.class.php");
+$feedback = "";
+
+if (!empty($_POST)) {
+
+
+    $list = new Lists();
+    $list->setName($_POST['list']);
+    $list->showList();
+
+
+
+
+    if (empty($_POST['list'])) {
+        $feedback = "Please give your list a name ";
+    } else {
+        $list->AddList();
+
+    }
+
+
+}
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -10,9 +34,26 @@ session_start();
     <title>Home</title>
 </head>
 <body>
-<h1> logged in </h1>
-<?php echo $_SESSION['user'] ?>
-<br>
+
 <a href="logout.php">logout</a>
+
+<div class="AddList">
+<form action="" method="post">
+    <input type="text" name="list" id="list" placeholder="New list">
+    <input type="submit" VALUE="Add list">
+</form>
+</div>
+
+<div class="feedback">
+    <p><?php echo $feedback ?></p>
+</div>
+
+<div class="lists">
+
+</div>
+
+
+
+
 </body>
 </html>

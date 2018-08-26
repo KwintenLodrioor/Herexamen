@@ -27,8 +27,8 @@ if(!empty($_POST)){
 
 ?><!doctype html>
 <html lang="en">
-<link rel="stylesheet" href="mainlogin.css">
 <head>
+    <link rel="stylesheet" href="mainlogin.css">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -36,15 +36,14 @@ if(!empty($_POST)){
     <title>Login</title>
 </head>
 <body>
+
 <div class="login">
-<form class="form" action="" method="post">
-    <input class="log" type="text" id="email" name="email" placeholder="Email">
-    <input class="log" type="text" id="password" name="password" placeholder="Password">
-    <input class="log" type="submit" id="sub" value="Submit">
+<form action="" method="post">
+    <input type="text" id="email" name="email" placeholder="Email">
+    <input type="text" id="password" name="password" placeholder="Password">
+    <input type="submit"value="Submit">
 </form>
-    <div class="reg">
-        <a href="register.php">register</a>
-    </div>
+    <a href="register.php">register</a>
 </div>
 
 <div class="feedback">
