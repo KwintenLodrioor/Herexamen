@@ -34,23 +34,26 @@ if (!empty($_POST)) {
 ?><!doctype html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="main.css">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
 </head>
-<body>
+<body class="grid-container">
+<div class="header">
+    <div id="logout"><a href="logout.php">LOGOUT</a></div>
+</div>
 
-<a href="logout.php">logout</a>
 
-<div class="AddList">
+<div class="side" class="AddList">
 <form action="" method="post">
     <input type="text" name="list" id="list" placeholder="New list">
     <input type="submit" VALUE="Add list">
 </form>
 </div>
-
+<div class="blok">
 <a href="task.php"><h3>Add Task</h3></a>
 
 <div class="feedback">
@@ -80,7 +83,7 @@ if (!empty($_POST)) {
     <?php endforeach; ?>
 
 </div>
-
+</div>
 
 
 

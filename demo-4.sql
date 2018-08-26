@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Gegenereerd op: 26 aug 2018 om 20:22
+-- Gegenereerd op: 26 aug 2018 om 21:32
 -- Serverversie: 10.1.34-MariaDB
 -- PHP-versie: 7.2.8
 
@@ -45,7 +45,8 @@ INSERT INTO `lists` (`id`, `naam`, `userid`) VALUES
 (68, 'fdq', 3),
 (69, 'aleeeee', 3),
 (70, 'aleeeee', 3),
-(71, 'nog is', 3);
+(71, 'nog is', 3),
+(72, 'showen', 3);
 
 -- --------------------------------------------------------
 
@@ -124,7 +125,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT voor een tabel `lists`
 --
 ALTER TABLE `lists`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT voor een tabel `Tasks`
