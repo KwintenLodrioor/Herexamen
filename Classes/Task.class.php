@@ -114,9 +114,16 @@ Class Tasks
         return $res;
     }
 
-    
+    public function listTask(){
+        $conn = Db::getInstance();
+        $statement = $conn->prepare("select * from Tasks where userid = :userid and list = :list order by deadline ASC ");
+        $statement->bindValue(':userid', $_SESSION['userid']);
+        $statement->bindParam(':list',$_GET['list']);
+        $res = $statement->execute();
+        $res = $statement->fetchAll();
+        return $res;
 
-
+    }
 
 
 }

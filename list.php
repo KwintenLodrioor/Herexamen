@@ -10,7 +10,7 @@ $list = new Lists();
 $l = $list->showList();
 
 $task = new Tasks();
-$t = $task->showTask();
+$t = $task->listTask();
 
 
 if (!empty($_POST)) {
@@ -47,6 +47,7 @@ if (!empty($_POST)) {
 
 <nav>
     <ul>
+        <li><a href="index.php">Home</a></li>
         <li><a href="task.php"><h3>Add Task</h3></a></li>
         <li><a href="logout.php">Logout</a></li>
     </ul>
@@ -68,38 +69,38 @@ if (!empty($_POST)) {
         </form>
     </div>
     <br>
-<?php foreach($l as $a): ?>
-    <a href="list.php?list=<?php echo$a['naam']; ?>"><p><?php echo $a['naam']; ?></p></a>
-    <br>
-<?php endforeach; ?>
+    <?php foreach($l as $a): ?>
+        <a href="list.php?list=<?php echo$a['naam']; ?>"><p><?php echo $a['naam']; ?></p></a>
+        <br>
+    <?php endforeach; ?>
 </div>
 
 
 <div class="Tasks">
 
-    <h2>All Tasks</h2>
+    <h2><?php echo $_GET['list']; ?></h2>
     <br>
 
     <?php foreach ($t as $ta): ?>
 
-       <div class="<?php echo $ta['status']?>">
-        <?php $taskid = $ta['id']; ?>
-           <a href="detailTask.php?task=<?php echo $ta['title']; ?>"><p id="task" style="font-size: 1.2em; margin-left: 2%;"><?php echo $ta['title']; ?></p></a>
-        <p id="hours"style="margin-left: 2%;display: block;">Hours:<?php echo $ta['hours']; ?></p>
-        <p id="deadline"style="display: block;float: right;">Deadline:<?php echo $ta['deadline']; ?></p>
-        <p id="status"style="margin-left: 2%">Status:<?php echo $ta['status']; ?></p>
-        <?php
-        date_default_timezone_set('Europe/Brussels');
-        $now = time();
-        $your_date = strtotime($ta['deadline']);
-        $datediff = $your_date - $now;
-        $days_remaining = floor($datediff/(60*60*24));
-        ?>
-        <p id="countdown"style="display: block; float: right"><?php echo $days_remaining;?> days remaining</p>
+        <div class="<?php echo $ta['status']?>">
+            <?php $taskid = $ta['id']; ?>
+            <a href="detailTask.php?task=<?php echo $ta['title']; ?>"><p id="task" style="font-size: 1.2em; margin-left: 2%;"><?php echo $ta['title']; ?></p></a>
+            <p id="hours"style="margin-left: 2%;display: block;">Hours:<?php echo $ta['hours']; ?></p>
+            <p id="deadline"style="display: block;float: right;">Deadline:<?php echo $ta['deadline']; ?></p>
+            <p id="status"style="margin-left: 2%">Status:<?php echo $ta['status']; ?></p>
+            <?php
+            date_default_timezone_set('Europe/Brussels');
+            $now = time();
+            $your_date = strtotime($ta['deadline']);
+            $datediff = $your_date - $now;
+            $days_remaining = floor($datediff/(60*60*24));
+            ?>
+            <p id="countdown"style="display: block; float: right"><?php echo $days_remaining;?> days remaining</p>
 
 
-        <br>
-    </div>
+            <br>
+        </div>
     <?php endforeach; ?>
 
 
