@@ -26,25 +26,25 @@ body h2{
     width: 68%;
     margin-right: 5%;
     margin-top: 3%;
+
 }
 
 .Todo{
     background-color: #ff704d;
-    height: 100px;
     margin-bottom: 2px;
 }
 
 .Doing{
     background-color: #ffb84d;
-    height: 100px;
     margin-bottom: 2px;
 }
 
 .Done{
     background-color: #a6ff4d;
-    height: 100px;
     margin-bottom: 2px;
 }
+
+
 
 nav{
     background-color: #1f3c52;
