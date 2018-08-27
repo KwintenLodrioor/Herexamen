@@ -38,23 +38,20 @@ if (!empty($_POST)) {
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="reset.css" type="text/css">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <title>Home</title>
 </head>
-<body class="grid-container">
-<div class="header">
-    <div id="logout"><a href="logout.php">LOGOUT</a></div>
-</div>
+<body>
 
+<nav>
+    <ul>
+        <li><a href="task.php"><h3>Add Task</h3></a></li>
+        <li><a href="logout.php">Logout</a></li>
+    </ul>
+</nav>
 
-<div class="side">
-<form id="addform" action="" method="post">
-    <input type="text" name="list" id="list" placeholder="New list">
-    <input id="addbtn" type="submit" VALUE="Add List">
-</form>
-</div>
-<div class="blok">
 
 
 <div class="feedback">
@@ -62,31 +59,41 @@ if (!empty($_POST)) {
 </div>
 
 <div class="lists">
-    <h2>Lijsten</h2>
-    <div class="part">
+    <h2>Lists</h2>
+    <br>
+    <div class="AddList">
+        <form action="" method="post">
+            <input type="text" name="list" id="list" placeholder="New list">
+            <input type="submit" VALUE="Add list">
+        </form>
+    </div>
     <br>
 <?php foreach($l as $a): ?>
-<?php echo $a['naam']; ?>
+<p><?php echo $a['naam']; ?></p>
     <br>
 <?php endforeach; ?>
-</div>
 </div>
 
 
 <div class="Tasks">
-    <a href="task.php"><h3>Add Task</h3></a>
-    <h2>Taken</h2>
-    <hr>
+
+    <h2>Tasks</h2>
+    <br>
+
     <?php foreach ($t as $ta): ?>
+    <div class="<?php echo $ta['status']?>">
         <p>Task:<?php echo $ta['title']; ?></p>
         <p>List:<?php echo $ta['list']; ?></p>
         <p>Hours:<?php echo $ta['hours']; ?></p>
         <p>Deadline:<?php echo $ta['deadline']; ?></p>
-        <hr>
+        <p>Status:<?php echo $ta['status']; ?></p>
+        <br>
+    </div>
     <?php endforeach; ?>
 
+
 </div>
-</div>
+
 
 
 

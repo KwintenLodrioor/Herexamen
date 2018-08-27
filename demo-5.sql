@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Gegenereerd op: 26 aug 2018 om 21:32
+-- Gegenereerd op: 27 aug 2018 om 11:40
 -- Serverversie: 10.1.34-MariaDB
 -- PHP-versie: 7.2.8
 
@@ -39,14 +39,9 @@ CREATE TABLE `lists` (
 --
 
 INSERT INTO `lists` (`id`, `naam`, `userid`) VALUES
-(65, 'testje', 3),
-(66, 'dufd', 3),
-(67, 'nieuw', 3),
-(68, 'fdq', 3),
-(69, 'aleeeee', 3),
-(70, 'aleeeee', 3),
-(71, 'nog is', 3),
-(72, 'showen', 3);
+(73, 'Taken IMD', 3),
+(74, 'Engels', 3),
+(75, 'Frans', 3);
 
 -- --------------------------------------------------------
 
@@ -60,17 +55,19 @@ CREATE TABLE `Tasks` (
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `hours` int(255) NOT NULL,
   `deadline` date NOT NULL,
-  `userid` int(11) NOT NULL
+  `userid` int(11) NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `Tasks`
 --
 
-INSERT INTO `Tasks` (`id`, `list`, `title`, `hours`, `deadline`, `userid`) VALUES
-(1, 'testje', 'fdqffd', 0, '0000-00-00', 3),
-(2, 'nieuw', 'Taak PHP', 5, '2018-09-01', 3),
-(3, 'testje', 'Eindproject', 500, '2019-01-01', 3);
+INSERT INTO `Tasks` (`id`, `list`, `title`, `hours`, `deadline`, `userid`, `status`) VALUES
+(1, 'testje', 'fdqffd', 0, '0000-00-00', 3, 'Done'),
+(2, 'nieuw', 'Taak PHP', 5, '2018-09-01', 3, 'Done'),
+(3, 'testje', 'Eindproject', 500, '2019-01-01', 3, 'Doing'),
+(4, 'Engels', 'Assignment', 1, '2018-09-01', 3, 'Todo');
 
 -- --------------------------------------------------------
 
@@ -125,13 +122,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT voor een tabel `lists`
 --
 ALTER TABLE `lists`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT voor een tabel `Tasks`
 --
 ALTER TABLE `Tasks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT voor een tabel `users`

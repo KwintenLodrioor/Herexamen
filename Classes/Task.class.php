@@ -75,12 +75,13 @@ Class Tasks
 
     public function saveTask(){
         $conn = Db::getInstance();
-        $statement = $conn->prepare("insert into Tasks(list,title,hours,deadline,userid) values (:list,:title,:hours,:deadline,:userid)");
+        $statement = $conn->prepare("insert into Tasks(list,title,hours,deadline,userid,status) values (:list,:title,:hours,:deadline,:userid,:status)");
         $statement->bindParam(':list',$this->list);
         $statement->bindParam(':title',$this->title);
         $statement->bindParam(':hours',$this->hours);
         $statement->bindParam(':deadline',$this->deadline);
         $statement->bindValue(':userid',$_SESSION['userid']);
+        $statement->bindValue(':status',"Todo");
         $res = $statement->execute();
         return $res;
 
