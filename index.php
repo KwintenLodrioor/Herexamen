@@ -34,11 +34,12 @@ if (!empty($_POST)) {
 ?><!doctype html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="main.css">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+
     <title>Home</title>
 </head>
 <body class="grid-container">
@@ -47,14 +48,14 @@ if (!empty($_POST)) {
 </div>
 
 
-<div class="side" class="AddList">
-<form action="" method="post">
+<div class="side">
+<form id="addform" action="" method="post">
     <input type="text" name="list" id="list" placeholder="New list">
-    <input type="submit" VALUE="Add list">
+    <input id="addbtn" type="submit" VALUE="Add List">
 </form>
 </div>
 <div class="blok">
-<a href="task.php"><h3>Add Task</h3></a>
+
 
 <div class="feedback">
     <p><?php echo $feedback ?></p>
@@ -62,16 +63,18 @@ if (!empty($_POST)) {
 
 <div class="lists">
     <h2>Lijsten</h2>
+    <div class="part">
     <br>
 <?php foreach($l as $a): ?>
 <?php echo $a['naam']; ?>
     <br>
 <?php endforeach; ?>
 </div>
+</div>
 
 
 <div class="Tasks">
-
+    <a href="task.php"><h3>Add Task</h3></a>
     <h2>Taken</h2>
     <hr>
     <?php foreach ($t as $ta): ?>
