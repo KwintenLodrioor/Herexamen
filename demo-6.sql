@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Gegenereerd op: 27 aug 2018 om 11:40
+-- Gegenereerd op: 28 aug 2018 om 13:16
 -- Serverversie: 10.1.34-MariaDB
 -- PHP-versie: 7.2.8
 
@@ -25,6 +25,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Tabelstructuur voor tabel `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL,
+  `comment` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `userid` int(255) NOT NULL,
+  `taskid` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `comments`
+--
+
+INSERT INTO `comments` (`id`, `comment`, `userid`, `taskid`) VALUES
+(3, 'test', 3, 1),
+(4, 'Bijna klaar', 3, 4),
+(5, 'test', 3, 4),
+(6, 'test', 3, 4),
+(7, 'testje', 3, 4),
+(8, 'fdqsfd', 3, 4),
+(9, 'dfqqf', 3, 4),
+(10, 'dfqqf', 3, 4),
+(11, 'dfqqf', 3, 4),
+(12, 'Assignment', 3, 4),
+(13, 'klaar!', 3, 2);
+
+-- --------------------------------------------------------
+
+--
 -- Tabelstructuur voor tabel `lists`
 --
 
@@ -41,7 +71,10 @@ CREATE TABLE `lists` (
 INSERT INTO `lists` (`id`, `naam`, `userid`) VALUES
 (73, 'Taken IMD', 3),
 (74, 'Engels', 3),
-(75, 'Frans', 3);
+(75, 'Frans', 3),
+(76, 'Duits', 3),
+(77, 'Webtech', 3),
+(78, 'Webtech', 3);
 
 -- --------------------------------------------------------
 
@@ -64,10 +97,12 @@ CREATE TABLE `Tasks` (
 --
 
 INSERT INTO `Tasks` (`id`, `list`, `title`, `hours`, `deadline`, `userid`, `status`) VALUES
-(1, 'testje', 'fdqffd', 0, '0000-00-00', 3, 'Done'),
-(2, 'nieuw', 'Taak PHP', 5, '2018-09-01', 3, 'Done'),
-(3, 'testje', 'Eindproject', 500, '2019-01-01', 3, 'Doing'),
-(4, 'Engels', 'Assignment', 1, '2018-09-01', 3, 'Todo');
+(1, 'Engels', 'fdqffd', 0, '2018-08-29', 3, 'Done'),
+(2, 'Frans', 'Taak PHP', 5, '2018-09-02', 3, 'Done'),
+(3, 'Duits', 'Eindproject', 500, '2019-01-01', 3, 'Doing'),
+(4, 'Engels', 'Assignment', 1, '2018-09-01', 3, 'Todo'),
+(5, 'Taken IMD', 'mockups', 2, '2018-09-30', 3, 'Todo'),
+(6, 'Webtech', 'HTML', 1, '2018-11-05', 3, 'Todo');
 
 -- --------------------------------------------------------
 
@@ -97,6 +132,12 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`) VALUES
 --
 
 --
+-- Indexen voor tabel `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexen voor tabel `lists`
 --
 ALTER TABLE `lists`
@@ -119,16 +160,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT voor een tabel `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT voor een tabel `lists`
 --
 ALTER TABLE `lists`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT voor een tabel `Tasks`
 --
 ALTER TABLE `Tasks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT voor een tabel `users`
