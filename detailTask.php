@@ -2,6 +2,11 @@
 include_once("Classes/User.class.php");
 include_once ("Classes/List.class.php");
 include_once ("Classes/Task.class.php");
+session_start();
+
+$task = new Tasks();
+$detail = $task->detailTask();
+
 
 ?>
 
@@ -15,6 +20,14 @@ include_once ("Classes/Task.class.php");
     <title>Document</title>
 </head>
 <body>
+
+<h2><?php echo $_GET['task'] ?></h2>
+<p><?php echo $detail['list'] ?></p>
+<p><?php echo $detail['hours'] ?></p>
+<p><?php echo $detail['deadline'] ?></p>
+<p><?php echo $detail['status'] ?></p>
+
+
 
 
 

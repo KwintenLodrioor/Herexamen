@@ -125,5 +125,15 @@ Class Tasks
 
     }
 
+    public function detailTask(){
+        $conn = Db::getInstance();
+        $statement = $conn->prepare("select * from Tasks where userid = :userid and title = :title");
+        $statement->bindValue(':userid',$_SESSION['userid']);
+        $statement->bindParam(':title',$_GET['task']);
+        $res = $statement->execute();
+        $res = $statement->fetch(PDO::FETCH_ASSOC);
+        return $res;
+    }
+
 
 }
