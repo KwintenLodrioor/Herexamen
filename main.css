@@ -30,17 +30,17 @@ body h2{
 }
 
 .Todo{
-    background-color: #ff704d;
+    border-left: #ff704d solid 10px;
     margin-bottom: 2px;
 }
 
 .Doing{
-    background-color: #ffb84d;
+    border-left: #ffb84d solid 10px;
     margin-bottom: 2px;
 }
 
 .Done{
-    background-color: #a6ff4d;
+    border-left: #a6ff4d solid 10px;
     margin-bottom: 2px;
 }
 
@@ -49,14 +49,15 @@ body h2{
 nav{
     background-color: #1f3c52;
     color: white;
-    height: 75px;
+    height: 60px;
+
 }
 
 nav ul li a{
     text-decoration: none;
     color: white;
     font-family: Arial;
-    font-size: 1.4em;
+    font-size: 1.2em;
 
 }
 

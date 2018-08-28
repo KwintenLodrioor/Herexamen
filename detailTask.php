@@ -11,7 +11,7 @@ $feedback="";
 
 $comment = new Comment();
 $c = $comment->showComment($detail['id']);
-var_dump($detail['id']);
+
 
 if (!empty($_POST)) {
     $comment = new Comment();
@@ -34,6 +34,9 @@ if (!empty($_POST)) {
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
