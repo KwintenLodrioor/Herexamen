@@ -41,18 +41,25 @@ if (!empty($_POST)) {
 </head>
 <body>
 
-<h2><?php echo $_GET['task'] ?></h2>
-<p><?php echo $detail['list'] ?></p>
-<p><?php echo $detail['hours'] ?></p>
-<p><?php echo $detail['deadline'] ?></p>
-<p><?php echo $detail['status'] ?></p>
+<nav>
+    <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="logout.php">Logout</a></li>
+    </ul>
+</nav>
+
+<nav style="padding-left: 50px;font-weight: bolder; font-size: 1.2em"><?php echo $_GET['task'] ?></nav>
+<p style="padding-left: 50px; padding-top: 50px;">List:     <?php echo $detail['list'] ?></p>
+<p style="padding-left: 50px; padding-top: 20px;">Hours:    <?php echo $detail['hours'] ?></p>
+<p style="padding-left: 50px; padding-top: 20px;">Deadline: <?php echo $detail['deadline'] ?></p>
+<p style="padding-left: 50px; padding-top: 20px;">Status:   <?php echo $detail['status'] ?></p>
 <p style="display: none;"><?php echo $detail['id'] ?></p>
 
 <div class="feedback">
     <p><?php $feedback; ?></p>
 </div>
 
-<div class="comment">
+<div style="padding-left: 20px; padding-top: 50px;" class="comment">
     <form action="" method="post">
         <input type="text" name="comment" id="comment">
         <input type="text" name="taskid" value="<?php echo $detail['id'] ?>"style="display: none;">
@@ -60,10 +67,13 @@ if (!empty($_POST)) {
     </form>
 </div>
 
-<div class="comments">
+<div style="padding-left: 50px; padding-top: 20px;" class="comments">
     <?php foreach ($c as $co): ?>
     <p><?php echo $_SESSION['user'] ?></p>
+        <br>
     <p><?php echo $co['comment']?></p>
+        <br>
+        <br>
     <?php endforeach;?>
 </div>
 

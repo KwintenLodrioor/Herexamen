@@ -38,13 +38,20 @@ if (!empty($_POST)) {
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
     <title>Add Task</title>
 </head>
 <body>
-
-<form action="" method="post">
-<p>select list:</p>
-    <select name="list" id="list">
+<nav>
+    <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="logout.php">Logout</a></li>
+    </ul>
+</nav>
+<form  action="" method="post">
+<nav style="font-size: 1.2em; font-weight: bolder;padding-left: 50px">select list:</nav>
+    <select  name="list" id="list">
 
         <?php foreach($l as $a) :?>
         <option name="list" id="list" value="<?php echo $a['naam']; ?>"><?php echo $a['naam']; ?></option>

@@ -49,7 +49,7 @@ body h2{
 nav{
     background-color: #1f3c52;
     color: white;
-    height: 60px;
+    height: 30px;
 
 }
 
@@ -71,3 +71,4 @@ nav ul li{
 nav ul{
     margin-left: 80%;
 }
+
